@@ -17,7 +17,7 @@ from typing import Dict, List, Set
 
 from setuptools import setup
 
-# Add here versions required for multiple plugins
+# Add here versions required for multiple pluginsP
 VERSIONS = {
     "airflow": "apache-airflow==2.9.1",
     "adlfs": "adlfs>=2023.1.0",
@@ -57,6 +57,7 @@ VERSIONS = {
     "giturlparse": "giturlparse",
     "validators": "validators~=0.22.0",
     "teradata": "teradatasqlalchemy>=20.0.0.0",
+    "pubsub": "google-cloud-pubsub>=2.8.0"
 }
 
 COMMONS = {
@@ -288,6 +289,7 @@ plugins: Dict[str, Set[str]] = {
         VERSIONS["azure-storage-blob"],
         VERSIONS["azure-identity"],
     },
+    "pubsub": {VERSIONS["pubsub"]},
     "qliksense": {"websocket-client~=1.6.1"},
     "presto": {*COMMONS["hive"], DATA_DIFF["presto"]},
     "pymssql": {"pymssql~=2.2.0"},
